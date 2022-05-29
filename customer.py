@@ -1,11 +1,11 @@
-from faulthandler import disable
-from ipaddress import collapse_addresses
+# from faulthandler import disable
+# from ipaddress import collapse_addresses
 from tkinter import *
-from turtle import st
+# from turtle import st
 from PIL import Image,ImageTk   #pip install pillow
 from tkinter import ttk
 
-from mysqlx import Column, Table
+# from mysqlx import Column, Table
 
 class Cust_Win:
     def __init__(self,root):
