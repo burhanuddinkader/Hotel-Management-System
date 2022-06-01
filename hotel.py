@@ -97,7 +97,7 @@ class HotelManagementSystem:
         self.new_window = Toplevel(self.root)
         self.app = RoomBooking(self.new_window)
 
-    def logout(self):
+    def logout(self):  #logout
         self.root.destroy()
 
 
