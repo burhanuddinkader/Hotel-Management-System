@@ -12,7 +12,7 @@ class Login_Window:
         self.root.geometry("1550x800+0+0")
 
         # Background image pura bg cover nahi kar raha.....  
-        self.bg=ImageTk.PhotoImage(file=r"C:\Desktop\Images\login_back.png")
+        self.bg=ImageTk.PhotoImage(file=r"D:\Users\bhavna\Desktop\Python mini proj\Hotel-Management-System\Images\register_bg1.jpg")
         lbl_bg=Label(self.root,image=self.bg)
         lbl_bg.place(x=0,y=0,relwidth=1,relheight=1)
 
@@ -20,7 +20,7 @@ class Login_Window:
         frame=Frame(self.root,bg="black")
         frame.place(x=610,y=170,width=340,height=450)
 
-        img1=Image.open(r"C:\Desktop\Images\login_logo.png")
+        img1=Image.open(r"D:\Users\bhavna\Desktop\Python mini proj\Hotel-Management-System\Images\login_logo.png")
         img1=img1.resize((100,100),Image.ANTIALIAS)  #Antialias is imp
         self.photoimage1=ImageTk.PhotoImage(img1)
 
@@ -44,13 +44,13 @@ class Login_Window:
         self.txtpass.place(x=40,y=250,width=270)
 
         #======icon image=======
-        img2=Image.open("C:\Desktop\Images\login_logo.png")
+        img2=Image.open(r"D:\Users\bhavna\Desktop\Python mini proj\Hotel-Management-System\Images\login_logo.png")
         img2=img2.resize((25,25),Image.ANTIALIAS)  #Antialias is imp
         self.photoimage2=ImageTk.PhotoImage(img2)
         lbling1=Label(self.root,image=self.photoimage2,bg="black",borderwidth=0)
         lbling1.place(x=650,y=323,width=25,height=25)
 
-        img3=Image.open("C:\Desktop\Images\login_icon.jpg")
+        img3=Image.open(r"D:\Users\bhavna\Desktop\Python mini proj\Hotel-Management-System\Images\login_icon.jpg")
         img3=img3.resize((25,25),Image.ANTIALIAS)  #Antialias is imp
         self.photoimage3=ImageTk.PhotoImage(img3)
         lbling1=Label(self.root,image=self.photoimage3,bg="black",borderwidth=0)
