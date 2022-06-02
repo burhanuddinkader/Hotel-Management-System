@@ -175,37 +175,37 @@ class Cust_Win:
 
         # ======table frame search systems======
         Table_Frame = LabelFrame(self.root, bd=2, relief=RIDGE,
-                                 text="View Details And Search System", font=("arial", 11, "bold"), padx=2)
+                                 text="View Details", font=("arial", 11, "bold"), padx=2)
         Table_Frame.place(x=435, y=50, width=860, height=490)
 
-        lblSearchBy = Label(Table_Frame, font=(
-            "arial", 11, "bold"), text="Search By:", bg="red", fg="white")
-        lblSearchBy.grid(row=0, column=0, sticky=W, padx=2)
+        # lblSearchBy = Label(Table_Frame, font=(
+        #     "arial", 11, "bold"), text="Search By:", bg="red", fg="white")
+        # lblSearchBy.grid(row=0, column=0, sticky=W, padx=2)
 
-        self.search_var = StringVar()
+        # self.search_var = StringVar()
 
-        combo_Search = ttk.Combobox(Table_Frame, textvariable=self.search_var, font=(
-            "arial", 12, "bold"), width=24, state="readonly")
-        combo_Search["value"] = ("Mobile", "Ref")
-        combo_Search.current(0)
-        combo_Search.grid(row=0, column=1, padx=2)
+        # combo_Search = ttk.Combobox(Table_Frame, textvariable=self.search_var, font=(
+        #     "arial", 12, "bold"), width=24, state="readonly")
+        # combo_Search["value"] = ("Mobile", "Ref")
+        # combo_Search.current(0)
+        # combo_Search.grid(row=0, column=1, padx=2)
 
-        self.txt_search = StringVar()
-        txtSearch = ttk.Entry(Table_Frame, textvariable=self.txt_search, font=(
-            "arial", 13, "bold"), width=24)
-        txtSearch.grid(row=0, column=2, padx=2)
+        # self.txt_search = StringVar()
+        # txtSearch = ttk.Entry(Table_Frame, textvariable=self.txt_search, font=(
+        #     "arial", 13, "bold"), width=24)
+        # txtSearch.grid(row=0, column=2, padx=2)
 
-        btnSearch = Button(Table_Frame, text="Search", command=self.search, font=(
-            "arial", 11, "bold"), bg="black", fg="gold", width=10)
-        btnSearch.grid(row=0, column=3, padx=1)
+        # btnSearch = Button(Table_Frame, text="Search", command=self.search, font=(
+        #     "arial", 11, "bold"), bg="black", fg="gold", width=10)
+        # btnSearch.grid(row=0, column=3, padx=1)
 
-        btnShowAll = Button(Table_Frame, text="Show All", command=self.fetch_data, font=(
-            "arial", 11, "bold"), bg="black", fg="gold", width=10)
-        btnShowAll.grid(row=0, column=4, padx=1)
+        # btnShowAll = Button(Table_Frame, text="Show All", command=self.fetch_data, font=(
+        #     "arial", 11, "bold"), bg="black", fg="gold", width=10)
+        # btnShowAll.grid(row=0, column=4, padx=1)
 
         # ======Show data table======
         details_table = Frame(Table_Frame, bd=2, relief=RIDGE)
-        details_table.place(x=0, y=50, width=860, height=350)
+        details_table.place(x=0, y=0, width=860, height=450)
 
         scroll_x = ttk.Scrollbar(details_table, orient=HORIZONTAL)
         scroll_y = ttk.Scrollbar(details_table, orient=VERTICAL)
