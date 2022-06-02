@@ -67,6 +67,7 @@ class Login_Window:
         #forgetpassbtn
         loginbtn=Button(frame,text="Forget Password",font=("times new roman",10,"bold"),borderwidth=0,fg="white",bg="black",activeforeground="white",activebackground="black")
         loginbtn.place(x=10,y=370,width=160)
+
     
     # Isme inbuilt prompts diye hai so dekh lena 
     def login(self):
@@ -75,7 +76,10 @@ class Login_Window:
         elif self.txtuser.get()=="kapu" and self.txtpass.get()=="ashu":
             messagebox.showinfo("Success","Welcome to codewithkiran channel")
         else:
-            messagebox.showerror("Invalid","Invalid username&password")    
+            messagebox.showerror("Invalid","Invalid username&password")  
+
+
+            
 
                 
 
