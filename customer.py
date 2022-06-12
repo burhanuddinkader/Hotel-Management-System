@@ -42,7 +42,8 @@ class Cust_Win:
         lbl_title.place(x=0, y=0, width=1295, height=50)
 
         # ======logo======
-        img2 = Image.open("./Images/logo.jpg")
+        img2 = Image.open(
+            r"C:\Users\Vardhan\Desktop\Py Final\Hotel-Management-System\Images\logo.jpg")
         img2 = img2.resize((100, 40), Image.ANTIALIAS)  # Antialias is imp
         self.photoimg2 = ImageTk.PhotoImage(img2)
 
