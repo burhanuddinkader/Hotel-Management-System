@@ -4,8 +4,8 @@ from PIL import Image, ImageTk  # pip install pillow
 from customer import Cust_Win
 from room import RoomBooking
 
-# import matplotlib.pyplot as plt
-# import pandas as pd
+import matplotlib.pyplot as plt
+import pandas as pd
 
 
 class HotelManagementSystem:
@@ -60,11 +60,11 @@ class HotelManagementSystem:
             "times new roman", 14, "bold"), bg="black", fg="gold", bd=0,  activeforeground="gold", activebackground="black", cursor="hand1")
         room_btn.grid(row=1, column=0, pady=1)
 
-        details_btn = Button(btn_frame, text="CUSTOMER AUDIT",  width=22, font=(
+        details_btn = Button(btn_frame, text="CUSTOMER AUDIT", command=self.cust_audit,  width=22, font=(
             "times new roman", 14, "bold"), bg="black", fg="gold", bd=0,  activeforeground="gold", activebackground="black", cursor="hand1")
         details_btn.grid(row=2, column=0, pady=1)
 
-        report_btn = Button(btn_frame, text="COST AUDIT",  width=22, font=(
+        report_btn = Button(btn_frame, text="COST AUDIT", command=self.cost_audit, width=22, font=(
             "times new roman", 14, "bold"), bg="black", fg="gold", bd=0,  activeforeground="gold", activebackground="black", cursor="hand1")
         report_btn.grid(row=3, column=0, pady=1)
 
@@ -109,19 +109,20 @@ class HotelManagementSystem:
     def logout(self):
         self.root.destroy()
 
-    # def cust_audit(self):  # function to go to customer page
-    #     df=pd.read_excel(r"Total.xlsx")
-    #     df.plot(x="Room Type", y="No. of Customers", kind="bar", title="Customer Analysis")
-    #     plt.xlabel("Room Type")
-    #     plt.ylabel("No. of Customers")
-    #     plt.show()
+    def cust_audit(self):  # function to go to customer page
+        df = pd.read_excel(r"Total.xlsx")
+        df.plot(x="Room Type", y="No. of Customers",
+                kind="bar", title="Customer Analysis")
+        plt.xlabel("Room Type")
+        plt.ylabel("No. of Customers")
+        plt.show()
 
-    # def cost_audit(self):
-    #     df=pd.read_excel(r"Total.xlsx")
-    #     df.plot(x="Room Type", y="Cost", kind="line", title="Cost Analysis")
-    #     plt.xlabel("Room Type")
-    #     plt.ylabel("Cost")
-    #     plt.show()
+    def cost_audit(self):
+        df = pd.read_excel(r"Total.xlsx")
+        df.plot(x="Room Type", y="Cost", kind="line", title="Cost Analysis")
+        plt.xlabel("Room Type")
+        plt.ylabel("Cost")
+        plt.show()
 
 
 if __name__ == "__main__":

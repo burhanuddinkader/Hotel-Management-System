@@ -95,13 +95,32 @@ class RoomBooking:
             labelframeleft, textvariable=self.var_roomavailable, font=("arial", 13, "bold"), width=29)
         txtRoomAvailable.grid(row=4, column=1)
 
+        # # Meal
+        # lblMeal = Label(labelframeleft, text="Meal:", font=(
+        #     "arial", 12, "bold"), padx=2, pady=6)
+        # lblMeal.grid(row=5, column=0, sticky=W)
+        # txtMeal = ttk.Entry(labelframeleft, textvariable=self.var_meal, font=(
+        #     "arial", 13, "bold"), width=29)
+        # txtMeal.grid(row=5, column=1)
+
         # Meal
         lblMeal = Label(labelframeleft, text="Meal:", font=(
             "arial", 12, "bold"), padx=2, pady=6)
         lblMeal.grid(row=5, column=0, sticky=W)
-        txtMeal = ttk.Entry(labelframeleft, textvariable=self.var_meal, font=(
-            "arial", 13, "bold"), width=29)
+        txtMeal = ttk.Combobox(labelframeleft, textvariable=self.var_meal, font=(
+            "arial", 12, "bold"), width=29, state="readonly")
+        txtMeal["value"] = ("BreakFast", "Lunch", "Dinner")
+        txtMeal.current(0)
         txtMeal.grid(row=5, column=1)
+
+        # var = IntVar()
+
+        # Radiobutton(root, text="Science", variable=var,
+        #             value=1, command=self.viewSelected).pack()
+        # Radiobutton(root, text="Commerce", variable=var,
+        #             value=2, command=self.viewSelected).pack()
+        # Radiobutton(root, text="Arts", variable=var,
+        #             value=3, command=self.viewSelected).pack()
 
         # No of Days
         lblNoOfDays = Label(labelframeleft, text="No. of Days:", font=(
@@ -233,6 +252,23 @@ class RoomBooking:
 
         self.room_table.bind("<ButtonRelease-1>", self.get_cuersor)
         self.fetch_data()
+
+    # Meals
+
+    # def viewSelected():
+    #     choice = var.get()
+    #     if choice == 1:
+    #         output = "Science"
+
+    #     elif choice == 2:
+    #         output = "Commerce"
+
+    #     elif choice == 3:
+    #         output = "Arts"
+    #     else:
+    #         output = "Invalid selection"
+
+    #     return messagebox.showinfo('PythonGuides', f'You Selected {output}.')
     # add data
 
     def add_data(self):
@@ -262,7 +298,7 @@ class RoomBooking:
                     "Success", "Room booked", parent=self.root)
             except Exception as es:
                 messagebox.showwarning(
-                    "Warning", f"Some thing went wrong:{str(es)}", parent=self.root)
+                    "Warning", f"This Customer already exists", parent=self.root)
     # fetch data
 
     def fetch_data(self):
